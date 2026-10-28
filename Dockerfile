@@ -1,6 +1,6 @@
 # =============================================
-# FluxFetch | Universal Downloader (v2)
-# Includes: ffmpeg, Deno (JS runtime for yt-dlp), app.py
+# FluxFetch | Universal Downloader (v3)
+# Fixed: unzip for Deno + JS runtime support
 # =============================================
 FROM python:3.11-slim
 
@@ -9,10 +9,15 @@ RUN apt-get update \
         ffmpeg \
         ca-certificates \
         curl \
+        unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# Deno — required by yt-dlp for YouTube JS challenges
+# Install Deno (required by yt-dlp for JS challenges)
+# Using the official script; unzip is now available
 RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh
+
+# Verify Deno installation (fails fast if something went wrong)
+RUN deno --version
 
 RUN useradd --create-home --shell /bin/bash appuser
 

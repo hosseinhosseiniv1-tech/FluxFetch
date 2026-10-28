@@ -24,7 +24,5 @@ downloads/
 *.ytdl
 *.temp
 
-README.md
-
 .DS_Store
 Thumbs.db

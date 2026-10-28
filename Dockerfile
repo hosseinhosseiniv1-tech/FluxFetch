@@ -1,5 +1,6 @@
 # =============================================
-# FluxFetch | Universal Downloader
+# FluxFetch | Universal Downloader (v2)
+# Includes: ffmpeg, Deno (JS runtime for yt-dlp), app.py
 # =============================================
 FROM python:3.11-slim
 
@@ -9,6 +10,9 @@ RUN apt-get update \
         ca-certificates \
         curl \
     && rm -rf /var/lib/apt/lists/*
+
+# Deno — required by yt-dlp for YouTube JS challenges
+RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh
 
 RUN useradd --create-home --shell /bin/bash appuser
 

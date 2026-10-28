@@ -1,11 +1,9 @@
-# Git & IDE
 .git
 .gitignore
 .idea
 .vscode
 *.swp
 
-# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -16,22 +14,17 @@ venv/
 .venv/
 env/
 
-# Env & secrets
 .env
 .env.*
 !.env.example
 
-# Runtime artifacts
 downloads/
 *.log
 *.part
 *.ytdl
 *.temp
 
-# Docs
 README.md
-LICENSE
 
-# Local files
 .DS_Store
 Thumbs.db

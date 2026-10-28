@@ -1,4 +1,3 @@
-# ---- Python ----
 __pycache__/
 *.py[cod]
 *$py.class
@@ -18,14 +17,12 @@ ENV/
 .coverage
 htmlcov/
 
-# ---- Env & secrets ----
 .env
 .env.*
 !.env.example
 *.pem
 *.key
 
-# ---- Runtime artifacts ----
 downloads/
 *.log
 logs/
@@ -38,7 +35,6 @@ logs/
 *.webm
 *.mkv
 
-# ---- IDE / OS ----
 .idea/
 .vscode/
 *.swp
